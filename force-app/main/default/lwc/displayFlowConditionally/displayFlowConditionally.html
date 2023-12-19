@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Display Flows Conditionally in LWC">
+        <template lwc:if={isaccountRatingHot}>
+            <lightning-flow flow-api-name="SCREEN_Conditional_Flow_Invoke_From_LWC"
+                flow-input-variables={inputVariables}></lightning-flow>
+        </template>
+        <template lwc:elseif={isaccountRatingWarm}>
+            <lightning-flow flow-api-name="Warm_Account_Rating_Flow"
+                flow-input-variables={inputVariables}></lightning-flow>
+        </template>
+        <template lwc:elseif={isaccountRatingCold}>
+            <lightning-flow flow-api-name="Clod_Account_Rating_Flow"
+                flow-input-variables={inputVariables}></lightning-flow>
+        </template>
+    </lightning-card>
+</template>

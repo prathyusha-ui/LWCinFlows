@@ -1,0 +1,24 @@
+<template>
+    <lightning-tabset variant="vertical">
+        <lightning-tab label="Hot Rating">
+            <template lwc:if={isHotAccRating}>
+                <lightning-flow flow-api-name="SCREEN_Conditional_Flow_Invoke_From_LWC"
+                    flow-input-variables={inputVariables}></lightning-flow>
+            </template>
+        </lightning-tab>
+        <lightning-tab label="Warm Rating">
+            <template lwc:if={isWarmAccRating}>
+                <lightning-flow flow-api-name="Warm_Account_Rating_Flow"
+                    flow-input-variables={inputVariables}></lightning-flow>
+            </template>
+        </lightning-tab>
+
+        <lightning-tab label="Cold Rating">
+            <template lwc:if={isColdAccRating}>
+                <lightning-flow flow-api-name="Clod_Account_Rating_Flow"
+                    flow-input-variables={inputVariables}></lightning-flow>
+            </template>
+        </lightning-tab>
+
+    </lightning-tabset>
+</template>
